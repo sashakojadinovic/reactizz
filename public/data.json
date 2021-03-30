@@ -1,0 +1,36 @@
+[
+    {
+        "id":1,
+        "type":"radio",
+        "question_text":"Koliko protona ima u atomu čiji je atomski broj 12, a maseni broj 25?",
+        "answers": [
+            {"text":"12", "correct":true},
+            {"text":"13"},
+            {"text":"25"},
+            {"text":"8"},
+            {"text":"18"}
+        ]        
+    },
+    {
+        "id":2,
+        "type":"radio",
+        "question_text":"Koliko izotopa vodonika ima isti atomski broj?",
+        "answers": [
+            {"text":"Nijedan"},
+            {"text":"Jedan"},
+            {"text":"Dva"},
+            {"text":"Tri", "correct":true}
+        ]        
+    },
+    {
+        "id":3,
+        "type":"radio",
+        "question_text":"Koji od navedenih hemijskih elemenata može sa hlorom graditi jonsku vezu?",
+        "answers": [
+            {"text":"Natrijum", "correct":true},
+            {"text":"Vodonik"},
+            {"text":"Ugljenik"}
+
+        ]        
+    }
+]

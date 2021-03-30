@@ -1,0 +1,136 @@
+/* Colors */
+@white: #fff;
+@blue:#178bb8;
+@red:#dc3545;
+@green:#12a590;
+@yellow:#f0ad4e;
+@dark: #274756;
+
+/* Fonts */
+@main-font: 'Roboto';
+/* Variables */
+@transition-time: 250ms;
+/* Reset and Basics */
+html{
+  height:100%;
+  background-color: @dark;
+}
+/* Layout */
+.container{  
+  margin:0 auto;
+}
+.row{
+  display: flex;  
+}
+.col2{
+  flex-basis:100%;
+}
+.block{
+  width:100%; 
+}
+.question-text{
+  font-family: @main-font;
+  text-align: center;
+  color:@white;
+}
+.shadow{
+  box-shadow: 0 2px 2px 0 rgb(0 0 0 / 20%), 0 3px 1px -2px rgb(0 0 0 / 15%), 0 1px 5px 0 rgb(0 0 0 / 30%)
+}
+.red{
+  background-color:@red !important;
+}
+.green{
+  background-color: @green !important;
+}
+.yellow{
+  background-color:@yellow  !important;
+}
+/* UI */
+.btn{
+  font-family: @main-font;
+  padding:0 15px;
+  // line-height: 30px;
+  font-size: 15px;
+  text-decoration: none;
+  color: @white;
+  
+  text-align: center;
+  letter-spacing: .5px;
+  border:1px solid @dark;
+
+  //.shadow();
+}
+.btn:focus, .answer-selected{
+  border: 6px solid @yellow;
+  outline: none;
+}
+.btn:hover{
+  background-color:@yellow;
+  
+}
+.answer-btn{
+  font-weight:bold;
+  background-color: @blue;
+  margin:0;
+  height:60px;
+  border-radius:5px;
+}
+
+.question-nav{
+  margin-top:30px;
+  justify-content: space-between !important;
+}
+.nav-btn{
+  font-weight: bold;
+  font-size:1.1em;
+  background-color: @yellow;
+  color:@dark;
+  height:60px;
+  border-radius:5px;
+  flex-basis:33%;
+}
+.selected-btn{
+  border: 6px solid @yellow;
+}
+@media(min-width:1200px){
+  .container{
+    max-width:1140px;
+    
+  }
+  .row{
+    display:flex;
+    justify-content: space-around;
+    flex-wrap:wrap;
+  }
+
+  .col2{
+    flex-basis:50%;
+  }
+}
+
+/* Test */
+.animate {
+  transition-property: background-color;
+  transition-duration: .33s;
+
+}
+.animate2 {
+  animation-name: example;
+  animation-duration: .5s;
+}
+@keyframes example {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+.fade-enter{
+  opacity:0;
+  transition: opacity @transition-time;
+}
+.fade-enter-active{
+  opacity:1;
+  transition: opacity @transition-time;
+}
+.fade-exit{
+  opacity:0;
+  transition: opacity @transition-time;
+}

@@ -1,38 +1,122 @@
-.App {
+/* Colors */
+/* Fonts */
+/* Variables */
+/* Reset and Basics */
+html {
+  height: 100%;
+  background-color: #274756;
+}
+/* Layout */
+.container {
+  margin: 0 auto;
+}
+.row {
+  display: flex;
+}
+.col2 {
+  flex-basis: 100%;
+}
+.block {
+  width: 100%;
+}
+.question-text {
+  font-family: 'Roboto';
   text-align: center;
+  color: #fff;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.shadow {
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.2), 0 3px 1px -2px rgba(0, 0, 0, 0.15), 0 1px 5px 0 rgba(0, 0, 0, 0.3);
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.red {
+  background-color: #dc3545 !important;
+}
+.green {
+  background-color: #12a590 !important;
+}
+.yellow {
+  background-color: #f0ad4e !important;
+}
+/* UI */
+.btn {
+  font-family: 'Roboto';
+  padding: 0 15px;
+  font-size: 15px;
+  text-decoration: none;
+  color: #fff;
+  text-align: center;
+  letter-spacing: 0.5px;
+  border: 1px solid #274756;
+}
+.btn:focus,
+.answer-selected {
+  border: 6px solid #f0ad4e;
+  outline: none;
+}
+.btn:hover {
+  background-color: #f0ad4e;
+}
+.answer-btn {
+  font-weight: bold;
+  background-color: #178bb8;
+  margin: 0;
+  height: 60px;
+  border-radius: 5px;
+}
+.question-nav {
+  margin-top: 30px;
+  justify-content: space-between !important;
+}
+.nav-btn {
+  font-weight: bold;
+  font-size: 1.1em;
+  background-color: #f0ad4e;
+  color: #274756;
+  height: 60px;
+  border-radius: 5px;
+  flex-basis: 33%;
+}
+.selected-btn {
+  border: 6px solid #f0ad4e;
+}
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1140px;
+  }
+  .row {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+  .col2 {
+    flex-basis: 50%;
   }
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+/* Test */
+.animate {
+  transition-property: background-color;
+  transition-duration: 0.33s;
 }
-
-.App-link {
-  color: #61dafb;
+.animate2 {
+  animation-name: example;
+  animation-duration: 0.5s;
 }
-
-@keyframes App-logo-spin {
+@keyframes example {
   from {
-    transform: rotate(0deg);
+    opacity: 0;
   }
   to {
-    transform: rotate(360deg);
+    opacity: 1;
   }
+}
+.fade-enter {
+  opacity: 0;
+  transition: opacity 250ms;
+}
+.fade-enter-active {
+  opacity: 1;
+  transition: opacity 250ms;
+}
+.fade-exit {
+  opacity: 0;
+  transition: opacity 250ms;
 }
