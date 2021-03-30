@@ -47,7 +47,9 @@ html {
   letter-spacing: 0.5px;
   border: 1px solid #274756;
 }
-.btn:focus,
+.btn:focus {
+  outline: none;
+}
 .answer-selected {
   border: 6px solid #f0ad4e;
   outline: none;
