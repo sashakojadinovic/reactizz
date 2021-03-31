@@ -14,7 +14,9 @@ function Question(props) {
             </div>
             <div className="row question-nav">
                 <button onClick={() => props.changeQuestion(-1)}
-                    className="btn nav-btn block">Previous</button><button onClick={() => props.changeQuestion(1)} className="btn nav-btn block">Next</button>
+                    className="btn nav-btn block">Previous</button>
+                <button onClick={props.finish} className="btn finish-btn red" >{props.score>0?props.score:'Finish'}</button>
+                <button onClick={() => props.changeQuestion(1)} className="btn nav-btn block">Next</button>
             </div>
 
         </div>
