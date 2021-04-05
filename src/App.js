@@ -7,7 +7,7 @@ function App() {
 
   const [questionData, setQuestions] = useState(null);
   const [questionNumber, setQuestionNumber] = useState(0);
-  const [score, setScore] = useState(-1);
+  const [score, setScore] = useState(false);
 
   function updateResponses(questionResponse) {
     const updatedQuestionData = questionData.map((question, index) => {
@@ -45,14 +45,15 @@ function App() {
     let score = 0;
     questionData.forEach(element => {
       element.answers.forEach((answer) => {
-        if (answer.answered === true && answer.correct === true) {
-          score += 10;
+        if (answer.answered === true && answer.points) {
+          score += answer.points;
           //console.log(score)
         }
       })
 
     });
     setScore(score);
+    console.log(score);
 
   }
   if (questionData) {
