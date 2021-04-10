@@ -10,7 +10,8 @@ function Answer(props){
         additionalClasses += 'red';
     }
     return (
-        <div className="col2">
+        //ovo ćeš verovatno da skloniš
+        <div className={`col2 ${props.answer.text.length>17?"flex-wide":""}`}>
             {props.finished && props.answer.points>0 && props.answer.answered?<p className="answer-points">+{props.answer.points}</p>:''}
             {props.finished && props.answer.points<0 && props.answer.answered?<p className="answer-points">{props.answer.points}</p>:''}
            

@@ -18,8 +18,9 @@
         "answers": [
             {"text":"Nijedan", "points":-5},
             {"text":"Jedan", "points":-5},
-            {"text":"Dva", "points":-5},
-            {"text":"Tri", "points":10}
+            {"text":"Tri", "points":10},
+            {"text":"Dva", "points":-5}
+            
         ]        
     },
     {

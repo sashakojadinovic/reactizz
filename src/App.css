@@ -12,6 +12,8 @@ html {
 }
 .row {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
 }
 .col2 {
   flex-basis: 100%;
@@ -80,19 +82,22 @@ html {
 .score-btn {
   font-size: 2em;
 }
+.question-container {
+  position: relative;
+}
 .question-nav {
   margin-top: 30px;
   justify-content: space-between !important;
 }
 .question-nav-icon {
   height: auto;
-  width: 30%;
-  color: #f0ad4e;
+  width: 100%;
+  color: #12a590;
 }
 .nav-btn {
   background-color: transparent;
   height: 60px;
-  flex-basis: 20%;
+  flex-basis: 25%;
 }
 .selected-btn {
   border: 6px solid #f0ad4e;
@@ -112,17 +117,74 @@ html {
   font-weight: 700;
   min-width: 30px;
 }
+.flex-wide {
+  flex-basis: 100%;
+}
+.modal-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #274756bd;
+  z-index: 50;
+  display: flex;
+  justify-content: space-around;
+}
+.modal {
+  font-family: 'Roboto';
+  color: #fff;
+  position: absolute;
+  width: 90%;
+  min-height: 150px;
+  margin: 0 auto;
+  top: 60px;
+  background-color: #385f6f;
+  z-index: 100;
+  text-align: center;
+  border-radius: 7px;
+  box-shadow: 1px 1px 10px 1px #274756;
+  padding: 10px;
+}
+.modal-icon {
+  width: 45px;
+  height: auto;
+}
+.modal p {
+  font-size: 1.2em;
+}
+.modal-btn {
+  height: 50px;
+  width: 100px;
+  margin: 20px;
+  border: none;
+}
+.transparent50 {
+  opacity: 0.5;
+}
+button:disabled {
+  opacity: 0.2;
+}
 @media (min-width: 1200px) {
   .container {
     max-width: 1140px;
   }
-  .row {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-  }
   .col2 {
     flex-basis: 50%;
+  }
+  .question-nav-icon {
+    width: 30%;
+  }
+  .flex-wide {
+    flex-basis: 50%;
+  }
+  .modal {
+    width: 33%;
+  }
+  .modal-btn {
+    height: 50px;
+    width: 100px;
+    margin: 10px 40px;
   }
 }
 /* Test */
@@ -130,11 +192,25 @@ html {
   transition-property: background-color;
   transition-duration: 0.33s;
 }
-.animate2 {
-  animation-name: example;
+.animate-modal {
+  animation-name: modalApearence;
   animation-duration: 0.33s;
 }
-@keyframes example {
+.animate-bgrnd {
+  animation-name: fadeIn;
+  animation-duration: 0.33s;
+}
+@keyframes modalApearence {
+  from {
+    top: 50px;
+    opacity: 0;
+  }
+  to {
+    top: 60px;
+    opacity: 1;
+  }
+}
+@keyframes fadeIn {
   from {
     opacity: 0;
   }
