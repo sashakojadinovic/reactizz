@@ -1,6 +1,7 @@
 import {useState}  from 'react';
 import Answer from './Answer';
 import Modal from './Modal';
+import Swipe from './Swipe';
 import {ArrowLeftCircleFill, ArrowRightCircleFill} from 'react-bootstrap-icons';
 function Question(props) {
     const [modal, setModal] =  useState(false);
@@ -14,6 +15,7 @@ function Question(props) {
         
 
     }
+    Swipe(document.querySelector('#root'));
     return (
 
         <div className="question-container">
@@ -29,6 +31,7 @@ function Question(props) {
                 finished={props.score?true:false}
                 key={index} 
                 />)}
+
 
 
             </div>
