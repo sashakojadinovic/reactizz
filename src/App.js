@@ -3,65 +3,72 @@ import React, { useState, useEffect } from 'react';
 import { SwitchTransition, CSSTransition } from "react-transition-group";
 import Question from './components/Question';
 import './App.css';
-const App = () => {
+function App() {
 
   const [questionData, setQuestions] = useState(null);
   const [questionNumber, setQuestionNumber] = useState(0);
-  const [responses, setResponses] = useState([]);
-  //Ne treba ti responses, ubaci u questionData info da li je odgovor selektovan ili nije
+  const [score, setScore] = useState(false);
 
-  const initResponses=()=>{
-    if(!questionData){
-      return;
-    }
-    const updatedResponses = questionData.map(
-      (element, index)=>{
-        return null;
-      }
-    );
-    setResponses(updatedResponses);
-  }
-  const updateResponses = (questionResponse)=>{
-    //console.log("Response updated with a value of " + questionResponse);
-    const temp = responses.map((responseItem,index)=>{
-      return questionNumber!==index? responseItem: questionResponse;
+  function updateResponses(questionResponse) {
+    const updatedQuestionData = questionData.map((question, index) => {
+      return questionNumber !== index ? question : {
+        ...question, answers: question.answers.map((answer, i) => {
+          return i === questionResponse ? { ...answer, answered: answer.answered ? false : true } : answer;
+
+        })
+      };
     });
-    setResponses(temp);
-    
-  };
+
+    setQuestions(updatedQuestionData);
+  }
 
   useEffect(() => {
-      fetch('data.json')
+    fetch('data.json')
       .then(response => response.json())
       .then(data => {
         setQuestions(data);
-        console.log("questionData Received");        
+        console.log("questionData Received");
       });
   }, []);
-  
-  useEffect(()=>{
-    console.log("questionData Updated!!!");
-    initResponses();
-   },[questionData]);
 
-  const changeQuestion = (step) => {
+  useEffect(() => {
+    console.log("questionData Updated!!!");
+    //initResponses();
+  }, [questionData]);
+  function changeQuestion(step) {
     if (questionNumber + step >= 0 && questionNumber + step < questionData.length) {
       setQuestionNumber(questionNumber + step);
     }
 
   }
+  function finish() {
+    let score = 0;
+    questionData.forEach(element => {
+      element.answers.forEach((answer) => {
+        if (answer.answered === true && answer.points) {
+          score += answer.points;
+          //console.log(score)
+        }
+      })
 
+    });
+    setScore(score);
+    console.log(score);
+
+  }
   if (questionData) {
     return (
       <SwitchTransition>
-        <CSSTransition key={questionNumber} timeout={500} classNames="fade" >
+        <CSSTransition key={questionNumber} timeout={333} classNames="fade" >
 
 
 
           <div className="container">
-            <Question question={questionData[questionNumber]} 
-            changeQuestion={changeQuestion} 
-            updateResponses={updateResponses} />
+            <Question question={questionData[questionNumber]}
+              changeQuestion={changeQuestion}
+              updateResponses={updateResponses}
+              score={score}
+              finish={finish} />
 
           </div>
         </CSSTransition>

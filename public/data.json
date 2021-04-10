@@ -4,11 +4,11 @@
         "type":"radio",
         "question_text":"Koliko protona ima u atomu čiji je atomski broj 12, a maseni broj 25?",
         "answers": [
-            {"text":"12", "correct":true},
-            {"text":"13"},
-            {"text":"25"},
-            {"text":"8"},
-            {"text":"18"}
+            {"text":"12", "points":10},
+            {"text":"13", "points":-5},
+            {"text":"25", "points":-5},
+            {"text":"8", "points":-5},
+            {"text":"18", "points":-5}
         ]        
     },
     {
@@ -16,20 +16,32 @@
         "type":"radio",
         "question_text":"Koliko izotopa vodonika ima isti atomski broj?",
         "answers": [
-            {"text":"Nijedan"},
-            {"text":"Jedan"},
-            {"text":"Dva"},
-            {"text":"Tri", "correct":true}
+            {"text":"Nijedan", "points":-5},
+            {"text":"Jedan", "points":-5},
+            {"text":"Tri", "points":10},
+            {"text":"Dva", "points":-5}
+            
         ]        
     },
     {
         "id":3,
         "type":"radio",
+        "question_text":"Obeleži hemijske simbole nemetala.",
+        "answers": [
+            {"text":"Al", "points":-5},
+            {"text":"H", "points":5},
+            {"text":"O", "points":5},
+            {"text":"Mg", "points":-5}
+        ]        
+    },
+    {
+        "id":4,
+        "type":"radio",
         "question_text":"Koji od navedenih hemijskih elemenata može sa hlorom graditi jonsku vezu?",
         "answers": [
-            {"text":"Natrijum", "correct":true},
-            {"text":"Vodonik"},
-            {"text":"Ugljenik"}
+            {"text":"Natrijum", "points":10},
+            {"text":"Vodonik", "points":-5},
+            {"text":"Ugljenik", "points":-5}
 
         ]        
     }
