@@ -7,6 +7,8 @@ function App() {
   const [questionData, setQuestions] = useState(null);
   const [questionNumber, setQuestionNumber] = useState(0);
   const [score, setScore] = useState(false);
+  const [stopped, stopQuiz] = useState(false);
+
 
   function updateResponses(questionResponse) {
     const updatedQuestionData = questionData.map((question, index) => {
@@ -49,6 +51,7 @@ function App() {
     });
     setScore(score);
   }
+  
   if (questionData) {
     return (
      
@@ -57,13 +60,15 @@ function App() {
               questionNumber = {questionNumber+1}
               lastQuestion ={questionData.length}
               updateResponses={updateResponses}
-              score={score}              
+              score={score}
+              stopped = {stopped}              
               />
             <QuestionNavigation questionNumber = {questionNumber+1}
              lastQuestion ={questionData.length}
              changeQuestion={changeQuestion}
              finish={finish}
-             score={score}/>           
+             score={score}
+             stopped = {stopped} />           
 
           </div>
         

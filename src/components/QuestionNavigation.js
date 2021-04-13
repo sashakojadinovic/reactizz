@@ -19,7 +19,7 @@ function QuestionNavigation(props) {
 
             <button disabled={props.questionNumber < 2} onClick={() => props.changeQuestion(-1)}
                 className="btn nav-btn block"><ArrowLeftCircleFill className="question-nav-icon" /></button>
-            <button onClick={() => setModal(true)} className={`btn finish-btn ${props.score ? "green score-btn" : "yellow"}`} >{props.score ? props.score : <Clock />}</button>
+            <button onClick={() => setModal(true)} className={`btn finish-btn ${props.score ? "green score-btn" : "yellow"}`} >{props.score ? props.score : <Clock stopped={props.stopped} />}</button>
             <button disabled={props.questionNumber > props.lastQuestion - 1} onClick={() => props.changeQuestion(1)} className="btn nav-btn block"> <ArrowRightCircleFill className="question-nav-icon" /></button>
         </div>
     );

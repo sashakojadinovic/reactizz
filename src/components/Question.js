@@ -21,6 +21,7 @@ function Question(props) {
                             updateResponses={props.updateResponses}
                             finished={props.score ? true : false}
                             key={index}
+                            stopped = {props.stopped}
                         />)}
                     </div>
                 </div>

@@ -1,14 +1,12 @@
 import { useState, useEffect } from 'react';
-function Clock() {
+function Clock(props) {
     console.log("CLOCK RENDERED");
     const [time, changeTime] = useState(660);
     useEffect(() => {
-        if (time > 0) {
+        if (time > 0 && !props.stopped) {
             const intervalID = setTimeout(() => changeTime(time - 1), 1000);
             return () => clearInterval(intervalID);
         }
-
-
     });
     function formatTime(t) {
         if (t < 1) {
