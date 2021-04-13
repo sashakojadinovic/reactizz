@@ -2,13 +2,24 @@
 /* Fonts */
 /* Variables */
 /* Reset and Basics */
-html {
+html,
+body {
+  margin: 0;
+  padding: 0;
   height: 100%;
   background-color: #274756;
 }
+/* Utils */
+.center {
+  text-align: center;
+}
 /* Layout */
+#root {
+  height: 100%;
+}
 .container {
   margin: 0 auto;
+  height: 100%;
 }
 .row {
   display: flex;
@@ -22,11 +33,20 @@ html {
 .block {
   width: 100%;
 }
+.question-number {
+  margin: 0;
+  padding-top: 10px;
+  color: #fff;
+  font-family: 'Roboto';
+}
 .question-text {
   font-size: 1.1em;
   font-family: 'Roboto';
   text-align: center;
   color: #fff;
+  margin: 0;
+  padding-top: 5px;
+  padding-bottom: 15px;
 }
 .shadow {
   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.2), 0 3px 1px -2px rgba(0, 0, 0, 0.15), 0 1px 5px 0 rgba(0, 0, 0, 0.3);
@@ -43,7 +63,6 @@ html {
 /* UI */
 .btn {
   font-family: 'Roboto';
-  padding: 0 15px;
   font-weight: bold;
   font-size: 15px;
   text-decoration: none;
@@ -52,6 +71,12 @@ html {
   text-align: center;
   letter-spacing: 0.5px;
   border: 1px solid #274756;
+}
+.btn:disabled {
+  opacity: 1 !important;
+}
+.btn:disabled svg {
+  color: #385f6f;
 }
 .btn:focus {
   outline: none;
@@ -74,20 +99,24 @@ html {
 }
 .finish-btn {
   border-radius: 50%;
-  height: 100px;
-  width: 100px;
+  height: 90px;
+  width: 90px;
   font-size: 1.2em;
   color: #274756;
+  border: none;
 }
 .score-btn {
   font-size: 2em;
 }
 .question-container {
   position: relative;
+  height: 100%;
 }
 .question-nav {
-  margin-top: 30px;
   justify-content: space-between !important;
+  position: absolute;
+  bottom: 10px;
+  width: 100%;
 }
 .question-nav-icon {
   height: auto;
@@ -98,6 +127,7 @@ html {
   background-color: transparent;
   height: 60px;
   flex-basis: 25%;
+  border: none;
 }
 .selected-btn {
   border: 6px solid #f0ad4e;
@@ -162,9 +192,6 @@ html {
 .transparent50 {
   opacity: 0.5;
 }
-button:disabled {
-  opacity: 0.2;
-}
 @media (min-width: 1200px) {
   .container {
     max-width: 1140px;
@@ -172,8 +199,18 @@ button:disabled {
   .col2 {
     flex-basis: 50%;
   }
+  .question-nav {
+    bottom: 150px;
+  }
   .question-nav-icon {
     width: 30%;
+  }
+  .finish-btn {
+    height: 120px;
+    width: 120px;
+    font-size: 2em;
+    color: #274756;
+    border: none;
   }
   .flex-wide {
     flex-basis: 50%;
@@ -190,15 +227,15 @@ button:disabled {
 /* Test */
 .animate {
   transition-property: background-color;
-  transition-duration: 0.33s;
+  transition-duration: 0.25s;
 }
 .animate-modal {
   animation-name: modalApearence;
-  animation-duration: 0.33s;
+  animation-duration: 0.25s;
 }
 .animate-bgrnd {
   animation-name: fadeIn;
-  animation-duration: 0.33s;
+  animation-duration: 0.25s;
 }
 @keyframes modalApearence {
   from {

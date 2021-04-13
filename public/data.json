@@ -1,7 +1,7 @@
 [
     {
         "id":1,
-        "type":"radio",
+        "type":"checkbox",
         "question_text":"Koliko protona ima u atomu čiji je atomski broj 12, a maseni broj 25?",
         "answers": [
             {"text":"12", "points":10},
@@ -13,7 +13,7 @@
     },
     {
         "id":2,
-        "type":"radio",
+        "type":"checkbox",
         "question_text":"Koliko izotopa vodonika ima isti atomski broj?",
         "answers": [
             {"text":"Nijedan", "points":-5},
@@ -25,7 +25,7 @@
     },
     {
         "id":3,
-        "type":"radio",
+        "type":"checkbox",
         "question_text":"Obeleži hemijske simbole nemetala.",
         "answers": [
             {"text":"Al", "points":-5},
@@ -36,7 +36,7 @@
     },
     {
         "id":4,
-        "type":"radio",
+        "type":"checkbox",
         "question_text":"Koji od navedenih hemijskih elemenata može sa hlorom graditi jonsku vezu?",
         "answers": [
             {"text":"Natrijum", "points":10},

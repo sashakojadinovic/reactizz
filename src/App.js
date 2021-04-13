@@ -4,7 +4,7 @@ import { SwitchTransition, CSSTransition } from "react-transition-group";
 import Question from './components/Question';
 import './App.css';
 function App() {
-
+  console.log("APP RENDERED");
   const [questionData, setQuestions] = useState(null);
   const [questionNumber, setQuestionNumber] = useState(0);
   const [score, setScore] = useState(false);
@@ -27,12 +27,12 @@ function App() {
       .then(response => response.json())
       .then(data => {
         setQuestions(data);
-        console.log("questionData Received");
+        //console.log("questionData Received");
       });
   }, []);
 
   useEffect(() => {
-    console.log("questionData Updated!!!");
+    //console.log("questionData Updated!!!");
     //initResponses();
   }, [questionData]);
   function changeQuestion(step) {
@@ -53,18 +53,20 @@ function App() {
 
     });
     setScore(score);
-    console.log(score);
+    //console.log(score);
 
   }
   if (questionData) {
     return (
       <SwitchTransition>
-        <CSSTransition key={questionNumber} timeout={333} classNames="fade" >
+        <CSSTransition key={questionNumber} timeout={250} classNames="fade" >
 
 
 
           <div className="container">
             <Question question={questionData[questionNumber]}
+              questionNumber = {questionNumber+1}
+              lastQuestion ={questionData.length}
               changeQuestion={changeQuestion}
               updateResponses={updateResponses}
               score={score}
