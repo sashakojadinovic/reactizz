@@ -1,7 +1,6 @@
-
 import React, { useState, useEffect } from 'react';
-import { SwitchTransition, CSSTransition } from "react-transition-group";
 import Question from './components/Question';
+import QuestionNavigation from './components/QuestionNavigation';
 import './App.css';
 function App() {
   console.log("APP RENDERED");
@@ -31,10 +30,6 @@ function App() {
       });
   }, []);
 
-  useEffect(() => {
-    //console.log("questionData Updated!!!");
-    //initResponses();
-  }, [questionData]);
   function changeQuestion(step) {
     if (questionNumber + step >= 0 && questionNumber + step < questionData.length) {
       setQuestionNumber(questionNumber + step);
@@ -53,28 +48,23 @@ function App() {
 
     });
     setScore(score);
-    //console.log(score);
-
   }
   if (questionData) {
     return (
-      <SwitchTransition>
-        <CSSTransition key={questionNumber} timeout={250} classNames="fade" >
-
-
-
+     
           <div className="container">
             <Question question={questionData[questionNumber]}
               questionNumber = {questionNumber+1}
               lastQuestion ={questionData.length}
-              changeQuestion={changeQuestion}
               updateResponses={updateResponses}
               score={score}
               finish={finish} />
+            <QuestionNavigation questionNumber = {questionNumber+1}
+             lastQuestion ={questionData.length}
+             changeQuestion={changeQuestion} />           
 
           </div>
-        </CSSTransition>
-      </SwitchTransition>
+        
     )
   }
   else {
