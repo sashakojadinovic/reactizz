@@ -1,11 +1,10 @@
 import Answer from './Answer';
-import Swipe from './Swipe';
 import { SwitchTransition, CSSTransition } from "react-transition-group";
 function Question(props) {
     console.log("Question RENDERED");
     const loadedQuestion = props.question ? props.question.answers : [];
 
-    Swipe(document.querySelector('#root'), props.changeQuestion);
+    
 
     return (
         <SwitchTransition>

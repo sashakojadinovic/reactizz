@@ -2,9 +2,9 @@ import { ArrowLeftCircleFill, ArrowRightCircleFill } from 'react-bootstrap-icons
 import { useState } from 'react';
 import Clock from './Clock';
 import Modal from './Modal';
+//import Swipe from './Swipe';
 
 function QuestionNavigation(props) {
-    const [questionNumber, setQuestionNumber] = useState(0);
     const [modal, setModal] = useState(false);
     function closeModal(confirmed) {
         setModal(false);
@@ -12,6 +12,7 @@ function QuestionNavigation(props) {
             props.finish();
         }
     }
+    //Swipe(document.querySelector('#root'), props.changeQuestion);
     return (
         <div className="row question-nav">
             {modal ? <Modal closeModal={closeModal} message={"Da li želiš da završiš test i pošalješ svoje odgovore?"} /> : ''}

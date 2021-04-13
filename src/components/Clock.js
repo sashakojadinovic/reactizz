@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 function Clock() {
     console.log("CLOCK RENDERED");
-    const [time, changeTime] = useState(15);
+    const [time, changeTime] = useState(660);
     useEffect(() => {
         if (time > 0) {
             const intervalID = setTimeout(() => changeTime(time - 1), 1000);

@@ -10,7 +10,6 @@ function Answer(props){
         additionalClasses += 'red';
     }
     return ( 
-        //ovo ćeš verovatno da skloniš ako mobile buttons budu wide po defaultu
         <div className="col2">
             {props.finished && props.answer.points>0 && props.answer.answered?<p className="answer-points">+{props.answer.points}</p>:''}
             {props.finished && props.answer.points<0 && props.answer.answered?<p className="answer-points">{props.answer.points}</p>:''}

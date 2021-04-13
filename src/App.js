@@ -57,11 +57,13 @@ function App() {
               questionNumber = {questionNumber+1}
               lastQuestion ={questionData.length}
               updateResponses={updateResponses}
-              score={score}
-              finish={finish} />
+              score={score}              
+              />
             <QuestionNavigation questionNumber = {questionNumber+1}
              lastQuestion ={questionData.length}
-             changeQuestion={changeQuestion} />           
+             changeQuestion={changeQuestion}
+             finish={finish}
+             score={score}/>           
 
           </div>
         

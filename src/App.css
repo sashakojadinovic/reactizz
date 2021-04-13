@@ -18,7 +18,7 @@ body {
   height: 100%;
 }
 .container {
-  position:relative;
+  position: relative;
   margin: 0 auto;
   height: 100%;
 }
@@ -102,12 +102,12 @@ body {
   border-radius: 50%;
   height: 90px;
   width: 90px;
-  font-size: 1.2em;
+  font-size: 1.5em;
   color: #274756;
   border: none;
 }
 .score-btn {
-  font-size: 2em;
+  font-size: 2.2em;
 }
 .question-container {
   position: relative;
@@ -127,7 +127,7 @@ body {
 .nav-btn {
   background-color: transparent;
   height: 60px;
-  flex-basis: 25%;
+  flex-basis: 20%;
   border: none;
 }
 .selected-btn {
@@ -206,10 +206,13 @@ body {
   .question-nav-icon {
     width: 30%;
   }
+  .nav-btn {
+    flex-basis: 25%;
+  }
   .finish-btn {
     height: 120px;
     width: 120px;
-    font-size: 2em;
+    font-size: 2.2em;
     color: #274756;
     border: none;
   }
