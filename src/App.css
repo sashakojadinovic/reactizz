@@ -263,9 +263,13 @@ body {
 }
 /* Test */
 .animate {
-  transition-property: background-color;
-  transition-duration: 0.25s;
+  transition-property: opacity;
+  transition-duration: 0.33s;
 }
+/* .animate {
+  transition-property: background-color;
+  transition-duration: .25s;
+} */
 .animate-modal {
   animation-name: modalApearence;
   animation-duration: 0.25s;
