@@ -1,3 +1,4 @@
+import React from 'react';
 import {ExclamationTriangle} from 'react-bootstrap-icons';
 function Modal(props) {
     return (

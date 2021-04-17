@@ -1,3 +1,4 @@
+import React from 'react';
 function Answer(props){
     function answerChanged(){
         if(!props.stopped){
@@ -5,9 +6,12 @@ function Answer(props){
         }
        
     }
-    var additionalClasses =''
+    var additionalClasses ='';
+    if(!props.finished){
+        additionalClasses='blue';
+    }
     if(props.finished && props.answer.points>0){
-        additionalClasses = 'green';
+        additionalClasses  = 'green';
     }
     if(props.finished && props.answer.points<0 && props.answer.answered){
         additionalClasses += 'red';

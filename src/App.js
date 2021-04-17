@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import Question from './components/Question';
 import QuestionNavigation from './components/QuestionNavigation';
+import QuestionContent from './components/QuestionContent';
 import './App.css';
 function App() {
   console.log("APP RENDERED");
@@ -50,28 +50,31 @@ function App() {
 
     });
     setScore(score);
+    stopQuiz(true);
   }
-  
+
   if (questionData) {
     return (
-     
-          <div className="container">
-            <Question question={questionData[questionNumber]}
-              questionNumber = {questionNumber+1}
-              lastQuestion ={questionData.length}
-              updateResponses={updateResponses}
-              score={score}
-              stopped = {stopped}              
-              />
-            <QuestionNavigation questionNumber = {questionNumber+1}
-             lastQuestion ={questionData.length}
-             changeQuestion={changeQuestion}
-             finish={finish}
-             score={score}
-             stopped = {stopped} />           
 
-          </div>
-        
+      <div className="container">
+
+        <QuestionContent questionNumber = {questionNumber+1}
+          question = {questionData[questionNumber]}
+          score={score}
+          stopped={stopped}
+          lastQuestion={questionData.length}
+          updateResponses = {updateResponses}
+           />
+        <QuestionNavigation questionNumber={questionNumber + 1}
+          lastQuestion={questionData.length}
+          changeQuestion={changeQuestion}
+          finish={finish}
+          score={score}
+          stopped={stopped}
+        />
+
+      </div>
+
     )
   }
   else {
