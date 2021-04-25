@@ -1,9 +1,10 @@
 /* Colors */
-@white: #fff;
+@lighter-yellow: #fff;
 @blue:#1f7b9e;
 @red:#dc3545;
 @green:#12a590;
 @yellow:#f0ad4e;
+@lighter-yellow:#fdd191;
 @dark: #274756;
 @gray:#385f6f;
 
@@ -11,6 +12,7 @@
 @main-font: 'Roboto';
 /* Variables */
 @transition-time: 250ms;
+@bordersize: 6px;
 /* Reset and Basics */
 html, body{
   margin:0;
@@ -47,7 +49,7 @@ html, body{
 .question-number{
   margin:0;
   padding-top:10px;
-  color:@white;
+  color:@lighter-yellow;
   font-family: @main-font;
 }
 .question-text{
@@ -55,7 +57,7 @@ html, body{
   font-size:1.2em;
   font-family: @main-font;
   text-align: center;
-  color:@white;
+  color:@lighter-yellow;
   margin: 0;
   padding-top:5px;
   padding-bottom:15px;
@@ -75,15 +77,16 @@ html, body{
 .yellow{
   background-color:@yellow  !important;
 }
+.yellow-border{
+  border:@bordersize solid @yellow !important;
+}
 /* UI */
 .btn{
   font-family: @main-font;
-  //padding:0 15px;
-  // line-height: 30px;
   font-weight:bold;
   font-size: 15px;
   text-decoration: none;
-  color: @white;
+  color: @lighter-yellow;
   border-radius:5px;
   text-align: center;
   letter-spacing: .5px;
@@ -105,7 +108,7 @@ html, body{
   outline:none;
 }
 .answer-selected{
-  border: 6px solid @yellow;
+  border: 6px solid @yellow !important; 
   outline: none;
 }
 
@@ -121,33 +124,50 @@ html, body{
   background-color: @gray;
   margin:0;
   height:60px;
-  
+}
+.true-or-false-btn{
+  font-size:1.2em;
+  background-color: @gray;
+  margin:0;
+  height:120px;
 }
 .short-answer-input-container{
   display: flex;
   margin-top:30px;
+  position:relative;
 }
 .short-answer-input-container label{
   align-self: center;
-  color:@white;
+  color:@lighter-yellow;
   font-family: @main-font;
   font-size:1.2em;
   margin-right:15px;
 }
-#short-answer-input{
-  color:@white;
-  height: 45px;
+.short-answer-input{
+  color:@lighter-yellow;
+  height: 46px;
   border: none;
   text-align: center;
   font-size: 1.2em;
   width: 100%;
-  background-color:@dark;
-  border-bottom: 1px solid white;
+  background-color:@gray;
+  border-radius:5px;
+  //border-bottom: 1px solid lighter-yellow;
 
 }
-#short-answer-input:focus{
+.short-answer-input:focus{
   outline:none;
-  background-color:@gray;
+  background-color:@lighter-yellow;
+  color:@dark;
+}
+.short-answer-input::placeholder{
+  color:@dark;
+  font-style:italic;
+}
+.correct-answer{
+  color:@lighter-yellow;
+  font-family:@main-font;
+  font-style:italic;
 }
 .finish-btn{
   border-radius:50%;
@@ -175,6 +195,18 @@ html, body{
   height:auto;
   width:100%;
   color:@yellow;
+}
+.results{
+  color:@lighter-yellow;
+  font-family:@main-font;
+  width: 100%;
+  text-align: center;
+}
+.reload{
+  color:@dark;height: 80%;
+  width: auto;
+  top: 5px;
+  position: relative;
 }
 .nav-btn{
   background-color: transparent;
@@ -216,7 +248,7 @@ html, body{
 }
 .modal{
   font-family: @main-font;
-  color:@white;
+  color:@lighter-yellow;
   position:absolute;
   width:90%;
   min-height:150px;
@@ -286,7 +318,7 @@ html, body{
 /* Test */
 .animate {
   transition-property: opacity;
-  transition-duration: .33s;
+  transition-duration: .25s;
 }
 /* .animate {
   transition-property: background-color;

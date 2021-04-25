@@ -38,14 +38,14 @@ body {
 .question-number {
   margin: 0;
   padding-top: 10px;
-  color: #fff;
+  color: #fdd191;
   font-family: 'Roboto';
 }
 .question-text {
   font-size: 1.2em;
   font-family: 'Roboto';
   text-align: center;
-  color: #fff;
+  color: #fdd191;
   margin: 0;
   padding-top: 5px;
   padding-bottom: 15px;
@@ -65,13 +65,16 @@ body {
 .yellow {
   background-color: #f0ad4e !important;
 }
+.yellow-border {
+  border: 6px solid #f0ad4e !important;
+}
 /* UI */
 .btn {
   font-family: 'Roboto';
   font-weight: bold;
   font-size: 15px;
   text-decoration: none;
-  color: #fff;
+  color: #fdd191;
   border-radius: 5px;
   text-align: center;
   letter-spacing: 0.5px;
@@ -91,7 +94,7 @@ body {
   outline: none;
 }
 .answer-selected {
-  border: 6px solid #f0ad4e;
+  border: 6px solid #f0ad4e !important;
   outline: none;
 }
 .btn:hover {
@@ -106,30 +109,47 @@ body {
   margin: 0;
   height: 60px;
 }
+.true-or-false-btn {
+  font-size: 1.2em;
+  background-color: #385f6f;
+  margin: 0;
+  height: 120px;
+}
 .short-answer-input-container {
   display: flex;
   margin-top: 30px;
+  position: relative;
 }
 .short-answer-input-container label {
   align-self: center;
-  color: #fff;
+  color: #fdd191;
   font-family: 'Roboto';
   font-size: 1.2em;
   margin-right: 15px;
 }
-#short-answer-input {
-  color: #fff;
-  height: 45px;
+.short-answer-input {
+  color: #fdd191;
+  height: 46px;
   border: none;
   text-align: center;
   font-size: 1.2em;
   width: 100%;
-  background-color: #274756;
-  border-bottom: 1px solid white;
-}
-#short-answer-input:focus {
-  outline: none;
   background-color: #385f6f;
+  border-radius: 5px;
+}
+.short-answer-input:focus {
+  outline: none;
+  background-color: #fdd191;
+  color: #274756;
+}
+.short-answer-input::placeholder {
+  color: #274756;
+  font-style: italic;
+}
+.correct-answer {
+  color: #fdd191;
+  font-family: 'Roboto';
+  font-style: italic;
 }
 .finish-btn {
   border-radius: 50%;
@@ -156,6 +176,19 @@ body {
   height: auto;
   width: 100%;
   color: #f0ad4e;
+}
+.results {
+  color: #fdd191;
+  font-family: 'Roboto';
+  width: 100%;
+  text-align: center;
+}
+.reload {
+  color: #274756;
+  height: 80%;
+  width: auto;
+  top: 5px;
+  position: relative;
 }
 .nav-btn {
   background-color: transparent;
@@ -197,7 +230,7 @@ body {
 }
 .modal {
   font-family: 'Roboto';
-  color: #fff;
+  color: #fdd191;
   position: absolute;
   width: 90%;
   min-height: 150px;
@@ -264,7 +297,7 @@ body {
 /* Test */
 .animate {
   transition-property: opacity;
-  transition-duration: 0.33s;
+  transition-duration: 0.25s;
 }
 /* .animate {
   transition-property: background-color;

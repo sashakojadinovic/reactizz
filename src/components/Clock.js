@@ -1,9 +1,9 @@
 import { useState, useEffect } from 'react';
 function Clock(props) {
-    console.log("CLOCK RENDERED");
+    //console.log("CLOCK RENDERED");
     const [time, changeTime] = useState(660);
     useEffect(() => {
-        if (time > 0 && !props.stopped) {
+        if (time > 0 && !props.stopped>0) {
             const intervalID = setTimeout(() => changeTime(time - 1), 1000);
             return () => clearInterval(intervalID);
         }
