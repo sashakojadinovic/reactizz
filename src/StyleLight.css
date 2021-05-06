@@ -7,7 +7,7 @@ body {
   margin: 0;
   padding: 0;
   height: 100%;
-  background-color: #274756;
+  background-color: #cbd3d6;
 }
 /* Utils */
 .center {
@@ -38,14 +38,14 @@ body {
 .question-number {
   margin: 0;
   padding-top: 10px;
-  color: #fdd191;
+  color: #274756;
   font-family: 'Roboto';
 }
 .question-text {
   font-size: 1.2em;
   font-family: 'Roboto';
   text-align: center;
-  color: #fdd191;
+  color: #274756;
   margin: 0;
   padding-top: 5px;
   padding-bottom: 15px;
@@ -57,7 +57,7 @@ body {
   background-color: #1f7b9e !important;
 }
 .red {
-  background-color: #dc4435 !important;
+  background-color: #dc3545 !important;
 }
 .green {
   background-color: #12a590 !important;
@@ -77,11 +77,11 @@ body {
   font-weight: bold;
   font-size: 15px;
   text-decoration: none;
-  color: #fdd191;
+  color: #fff;
   border-radius: 5px;
   text-align: center;
   letter-spacing: 0.5px;
-  border: 1px solid #274756;
+  border: 1px solid #cbd3d6;
 }
 .btn:hover {
   cursor: pointer;
@@ -91,7 +91,7 @@ body {
   cursor: default;
 }
 .btn:disabled svg {
-  color: #385f6f;
+  color: #1a6888;
 }
 .btn:focus {
   outline: none;
@@ -102,7 +102,7 @@ body {
   top: 5px;
   right: 20px;
   font-family: 'Roboto';
-  color: #fdd191;
+  color: #274756;
 }
 .user img {
   width: 30px;
@@ -115,7 +115,7 @@ body {
   display: none;
 }
 .login-container {
-  color: #fdd191 !important;
+  color: #274756 !important;
   font-family: 'Roboto';
   font-weight: normal !important;
   width: 300px;
@@ -125,14 +125,14 @@ body {
   font-weight: normal;
 }
 .google-login-btn {
-  color: #fdd191 !important;
-  background-color: #385f6f !important;
+  color: #fff !important;
+  background-color: #1a6888 !important;
   box-shadow: none !important;
   width: 100% !important;
 }
 .anonimous-login-btn {
-  color: #fdd191 !important;
-  background-color: #385f6f !important;
+  color: #fff !important;
+  background-color: #1a6888 !important;
   width: 100%;
   height: 43px;
   border-radius: 2px;
@@ -151,13 +151,13 @@ body {
 }
 .answer-btn {
   font-size: 1.1em;
-  background-color: #385f6f;
+  background-color: #1a6888;
   margin: 0;
   height: 60px;
 }
 .true-or-false-btn {
   font-size: 1.2em;
-  background-color: #385f6f;
+  background-color: #1a6888;
   margin: 0;
   height: 120px;
 }
@@ -176,7 +176,7 @@ body {
 .short-answer-input {
   color: #274756;
   height: 46px;
-  border: 6px solid #274756;
+  border: 6px solid #cbd3d6;
   text-align: center;
   font-size: 1.2em;
   width: 100%;
@@ -193,18 +193,18 @@ body {
   font-style: italic;
 }
 .correct-answer {
-  color: #fdd191;
+  color: #274756;
   font-family: 'Roboto';
 }
 .correct-answer span {
-  color: #fff;
+  color: #274756;
 }
 .finish-btn {
   border-radius: 50%;
   height: 90px;
   width: 90px;
   font-size: 1.5em;
-  color: #274756;
+  color: #fff;
   border: none;
 }
 .score-btn {
@@ -226,7 +226,7 @@ body {
   color: #f0ad4e;
 }
 .results {
-  color: #fdd191;
+  color: #274756;
   font-family: 'Roboto';
   width: 100%;
   text-align: center;
@@ -262,23 +262,6 @@ body {
   font-weight: 700;
   min-width: 30px;
 }
-ul.ordering-items {
-  width: 50%;
-  margin: 0 auto;
-}
-ul.ordering-items li {
-  font-size: 1.1em;
-  color: #fdd191;
-  font-family: 'Roboto';
-  font-weight: bold;
-  background-color: #385f6f;
-  width: 100%;
-  text-align: center;
-  list-style: none;
-  padding: 20px;
-  margin-bottom: 3px;
-  border-radius: 5px;
-}
 .flex-wide {
   flex-basis: 100%;
 }
@@ -295,13 +278,13 @@ ul.ordering-items li {
 }
 .modal {
   font-family: 'Roboto';
-  color: #fdd191;
+  color: #fff;
   position: absolute;
   width: 90%;
   min-height: 150px;
   margin: 0 auto;
   top: 60px;
-  background-color: #385f6f;
+  background-color: #1a6888;
   z-index: 100;
   text-align: center;
   border-radius: 7px;
@@ -328,14 +311,11 @@ ul.ordering-items li {
   .container {
     max-width: 1140px;
   }
-  .col1 {
-    flex-basis: 100%;
-  }
   .col2 {
     flex-basis: 50%;
   }
   .question-nav {
-    bottom: 10%;
+    bottom: 150px;
   }
   .question-nav-icon {
     width: 30%;
@@ -347,7 +327,6 @@ ul.ordering-items li {
     height: 120px;
     width: 120px;
     font-size: 2.2em;
-    color: #274756;
     border: none;
   }
   .flex-wide {

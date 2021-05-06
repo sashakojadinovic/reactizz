@@ -13,6 +13,12 @@ function ShortAnswer(props) {
 
         qContext.setQuestions(updatedQuestionData);
     }
+/*     function getCorrectAnswers(question){
+        const correctAnswers = [];
+        question.answers.forEach(a => {
+            if()
+        });
+    } */
     let additionalClasses = '';
     console.log("shortAnswer question rendered");
     if (qContext.stopped === 2) {
@@ -43,8 +49,10 @@ function ShortAnswer(props) {
                                             value={question.answered ? question.answered : ''} type="text"
                                         />
                                     </div>
-                                    {qContext.stopped === 2 ?
-                                        <p className="correct-answer">Tačan odgovor: {question.answers[0]}</p>
+                                    {qContext.stopped === 2 ?<>
+                                        <p className="correct-answer">Odgovori koji se prihvataju: <span> {question.answers.join(', ')}</span></p>
+                                        <p className="correct-answer">Broj osvojenih poena na pitanju: <span> {qContext.score.scoreArray[qContext.qNumber]}</span></p>
+                                        </>
                                         : ''}
 
                                 </>

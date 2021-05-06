@@ -4,7 +4,7 @@
         "question_text": "U prvi nivo svakog atoma mogu da stanu najviše dva elektrona?",
         "points":10,
         "wrong_answer_points":-5,
-        "answer":true,
+        "answer":false,
         "answered":null        
     },
     {
@@ -58,14 +58,16 @@
     {
         "type": "shortAnswer",
         "question_text": "Kako se zove izotop vodonika sa najvećim masenim brojem?",
-        "answers": ["tricijum","трицијум" ],
-        "points":10
+        "answers": ["tricijum" ],
+        "points":10,
+        "case_sensitive":false
     },
     {
         "type": "shortAnswer",
         "question_text": "Koliko ukupno elektronskih nivoa ima u elektronskom omotaču?",
-        "answers": ["sedam","7", "sedam nivoa", "7 nivoa", "седам" ],
-        "points":10
+        "answers": ["sedam","7", "sedam nivoa", "7 nivoa"],
+        "points":10,
+        "case_sensitive":false
     },
 
     {

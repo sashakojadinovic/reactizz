@@ -22,7 +22,7 @@ function TrueOrFalse() {
         }
     }
     function getCorrectAnswerClass(correct, qContext) {
-        if (qContext.stopped===2) {
+        if (qContext.stopped===2 && qContext.questions[qContext.qNumber].answered!==null) {
             return (correct === qContext.questions[qContext.qNumber].answer?'green':'red');
         }
         else {
@@ -30,6 +30,7 @@ function TrueOrFalse() {
         }
 
     }
+
     return (
         <div className="question-container">
             <div>
@@ -50,6 +51,11 @@ function TrueOrFalse() {
                                         </div>
 
                                     </div>
+                                    {qContext.stopped === 2 ?<>
+                                        <p className="correct-answer">Ispravan odgovor: <span>{question.answer?'Tačno':'Netačno'}</span></p>
+                                        <p className="correct-answer">Broj osvojenih poena na pitanju: <span> {qContext.score.scoreArray[qContext.qNumber]}</span></p>
+                                        </>
+                                        : ''}
                                 </>
                             )
                         }

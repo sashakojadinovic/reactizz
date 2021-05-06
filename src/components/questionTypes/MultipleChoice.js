@@ -5,7 +5,13 @@ function MultipleChoice() {
     console.log("MultipleChoice Question RENDERED");
     //const loadedQuestion = props.question ? props.question.answers : [];
 
-
+    function getCorrectAnswers(question){
+        const correctAnswers =[];
+        question.answers.forEach((a)=>{
+            if(a.points>0){ correctAnswers.push(a.text)}
+        })
+        return correctAnswers;
+    }
 
     return (
         <div className="question-container">
@@ -26,6 +32,11 @@ function MultipleChoice() {
                                         id={index}
                                     />)}
                                 </div>
+                                {       qContext.stopped === 2 ?<>
+                                        <p className="correct-answer">Odgovori koji se boduju: <span>{getCorrectAnswers(currentQuestion).join(', ')}</span></p>
+                                        <p className="correct-answer">Broj osvojenih poena na pitanju: <span> {qContext.score.scoreArray[qContext.qNumber]}</span></p>
+                                        </>
+                                        : ''}
                             </>
                         )
                     })

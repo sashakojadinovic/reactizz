@@ -3,6 +3,7 @@ import MultipleChoice from './questionTypes/MultipleChoice';
 import ShortAnswer from './questionTypes/ShortAnswer';
 import {QContext} from '../QContext';
 import TrueOrFalse from './questionTypes/TrueOrFalse';
+import Ordering from './questionTypes/Ordering';
 //import { SwitchTransition, CSSTransition } from "react-transition-group";
 function QuestionContainer(props) {
     //const questions = React.useContext(QContext);
@@ -16,14 +17,18 @@ function QuestionContainer(props) {
         else if(question.type==="trueOrFalse"){
             return <TrueOrFalse />
         }
+        else if(question.type==="ordering"){
+            return <Ordering />
+        }
         
     }
     
     return (
             <QContext.Consumer>
             {qContext=>{
+                
                 if(qContext.questions){
-                    return detectQType(qContext.questions[qContext.qNumber]);
+                    return ( detectQType(qContext.questions[qContext.qNumber]));
                 }
                 else{
                     console.log('loading questions...')
